@@ -3,9 +3,10 @@
 <table>
   <thead>
     <tr>
-      <th>Church name</th>
-      <th>Pastor or worship leader name</th>
+      <th>Church Name</th>
+      <th>Pastor or Worship Leader Name</th>
       <th>Comment</th>
+      <th>User</th>
       <th></th>
       <th></th>
       <th></th>
@@ -18,14 +19,20 @@
         <td><%= pin.Church_Name %></td>
         <td><%= pin.Pastor_or_Worship_Leader_Name %></td>
         <td><%= pin.comment %></td>
+        <td><%= pin.user.email if pin.user %></td>
+        
         <td><%= link_to 'Show', pin %></td>
-        <td><%= link_to 'Edit', edit_pin_path(pin) %></td>
-        <td><%= link_to 'Destroy', pin, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        
+        <% if pin.user == current_user %>
+          <td><%= link_to 'Edit', edit_pin_path(pin) %></td>
+          <td><%= link_to 'Destroy', pin, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
+<% if user_signed_in? %>
 <%= link_to 'New Pin', new_pin_path %>
+<% end %>
