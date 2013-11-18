@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Church_Name: MyString
+  Pastor_or_Worship_Leader_Name: MyString
+  comment: MyString
+
+two:
+  Church_Name: MyString
+  Pastor_or_Worship_Leader_Name: MyString
+  comment: MyString

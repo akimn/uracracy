@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Church Name:</strong><br>
+  <%= @pin.Church_Name %>
+</p>
+
+<p>
+  <strong>Pastor or Worship Leader Name:</strong><br>
+  <%= @pin.Pastor_or_Worship_Leader_Name %>
+</p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @pin.comment %>
+</p>
+
+<%= link_to 'Edit', edit_pin_path(@pin) %> |
+<%= link_to 'Back', pins_path %>
