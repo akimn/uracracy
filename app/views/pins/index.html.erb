@@ -3,6 +3,7 @@
     <div class="panel-body">
         <thead>
           <tr>
+            <th></th>
             <th>Church Name</th>
             <th>Pastor or Worship Leader Name</th>
             <th>Comment</th>
@@ -17,6 +18,7 @@
         <tbody>
           <% @pins.each do |pin| %>
             <tr>
+              <td><%= pin.created_at.strftime("%b %d, %Y") %></td>
               <td><%= pin.Church_Name %></td>
               <td><%= pin.Pastor_or_Worship_Leader_Name %></td>
               <td><%= pin.comment %></td>
