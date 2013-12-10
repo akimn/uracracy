@@ -19,7 +19,7 @@
 //= require_tree .
 
 $(function() {
-  $("#products th a, #products .pagination a").live("click", function() {
+  $("#pins th a, #pins .pagination a").live("click", function() {
     $.getScript(this.href);
     return false;
   });
