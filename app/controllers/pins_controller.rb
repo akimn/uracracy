@@ -4,8 +4,10 @@ class PinsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   # GET /pins
   # GET /pins.json
+  helper_method :sort_column, :sort_direction
+
   def index
-    @pins = Pin.all
+    @pins = Pin.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:per_page => 5, :page => params[:page])
   end
 
   # GET /pins/1
@@ -75,5 +77,13 @@ class PinsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def pin_params
       params.require(:pin).permit(:Church_Name, :Pastor_or_Worship_Leader_Name, :comment)
+    end
+
+    def sort_column
+      params[:sort] || "comment"
+    end
+  
+    def sort_direction
+      params[:direction] || "asc"
     end
 end

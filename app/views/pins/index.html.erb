@@ -1,37 +1,16 @@
 <%= render 'pages/home' unless user_signed_in? %>
-  <table class="table">
-    <div class="panel-body">
-        <thead>
-          <tr>
-            <th></th>
-            <th>Church Name</th>
-            <th>Pastor or Worship Leader Name</th>
-            <th>Comment</th>
-            <th>User</th>
-            <th></th>
-            <th></th>
-            <th></th>
-          </tr>
-        </thead>
+  
+   
+    <%= form_tag pins_path, :method => 'get' , :id => "products_search" do %>
+      
+      <p>
+        <%= text_field_tag :search, params[:search] %>
+        <%= submit_tag "SEARCH", :name => nil, class: "btn btn-default btn-xs" %>
+      </p>
+        <div id="products"><%= render 'pins' %></d>
+    <% end %>
 
+    
 
-        <tbody>
-          <% @pins.each do |pin| %>
-            <tr>
-              <td><%= pin.created_at.strftime("%b %d, %Y") %></td>
-              <td><%= pin.Church_Name %></td>
-              <td><%= pin.Pastor_or_Worship_Leader_Name %></td>
-              <td><%= pin.comment %></td>
-              <td><%= pin.user.email if pin.user %></td>
-              <td><%= link_to 'Show', pin_path(pin) %></td>
-              
-              <% if pin.user == current_user %>
-                <td><%= link_to 'Edit', edit_pin_path(pin) %></td>
-                <td><%= link_to 'Destroy', pin, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-              <% end %>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
+    </div>
 
-     </div>
