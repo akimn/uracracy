@@ -23,7 +23,7 @@ $(function() {
     $.getScript(this.href);
     return false;
   });
-  $("#products_search input").keyup(function() {
+  $("#pins_search input").keyup(function() {
     $.get($("#pins_search").attr("action"), $("#pins_search").serialize(), null, "script");
     return false;
   });
