@@ -18,13 +18,3 @@
 //= require masonry/jquery.masonry
 //= require_tree .
 
-$(function() {
-  $("#pins th a, #pins .pagination a").live("click", function() {
-    $.getScript(this.href);
-    return false;
-  });
-  $("#pins_search input").keyup(function() {
-    $.get($("#pins_search").attr("action"), $("#pins_search").serialize(), null, "script");
-    return false;
-  });
-});
