@@ -10,6 +10,7 @@ class Pin < ActiveRecord::Base
       	
       	 #if search
 	   where('comment LIKE ?', "%#{search}%")
+	   where('Pastor_or_Worship_Leader_Name LIKE ?', "%#{search}%")
 	 # elsif search != where('Church_Name LIKE ?', "%#{search}%")
 	  #  search
 	   # where('Pastor_or_Worship_Leader_Name LIKE ?', "%#{search}%")
