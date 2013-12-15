@@ -1,7 +1,7 @@
 <%= render 'pages/home' unless user_signed_in? %>
   
    
-    <%= form_tag pins_path, :method => 'get' , :id => "pin_search" do %>
+    <%= form_tag pins_path, :method => 'get' , :id => "pins_search" do %>
       
       <p>
         <%= text_field_tag :search, params[:search] %>
