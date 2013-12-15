@@ -11,11 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131118214821) do
+ActiveRecord::Schema.define(version: 20131215215828) do
 
   create_table "pins", force: true do |t|
-    t.string   "Church_Name"
-    t.string   "Pastor_or_Worship_Leader_Name"
+    t.string   "church_name"
+    t.string   "pastor_or_worship_leader_name"
     t.string   "comment"
     t.datetime "created_at"
     t.datetime "updated_at"
