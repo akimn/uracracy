@@ -14,7 +14,7 @@
 ActiveRecord::Schema.define(version: 20131118214821) do
 
   create_table "pins", force: true do |t|
-    t.string   "church_name"
+    t.string   "Church_Name"
     t.string   "Pastor_or_Worship_Leader_Name"
     t.string   "comment"
     t.datetime "created_at"
