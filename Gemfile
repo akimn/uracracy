@@ -11,6 +11,7 @@ gem 'jquery-turbolinks'
 gem 'jbuilder', '~> 1.2'
 #gem 'bootstrap-sass', github: 'thomas-mcdonald/bootstrap-sass', branch: '3'
 
+gem 'nifty-generators'
 gem 'bootstrap-sass', '~> 3.0.3.0'
 gem 'devise', '~> 3.1.0.rc2'
 gem 'masonry-rails', '~> 0.2.0'
