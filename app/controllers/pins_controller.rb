@@ -80,7 +80,7 @@ class PinsController < ApplicationController
     end
 
     def sort_column
-      params[:sort] || "comment" || "Church_Name" || "Pastor_or_Worship_Leader_Name"
+      params[:sort] || "comment" || "church_name" || "Pastor_or_Worship_Leader_Name"
     end
   
     def sort_direction
