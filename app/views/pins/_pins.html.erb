@@ -22,8 +22,8 @@
           <% @pins.each do |pin| %>
             <tr>
               <td><%= pin.created_at.strftime("%b %d, %Y") %></td>
-              <td><%= pin.church_name %></td>
-              <td><%= pin.pastor_or_worship_leader_name %></td>
+              <td><%= pin.Church_Name %></td>
+              <td><%= pin.Pastor_or_Worship_Leader_Name %></td>
               <td><%= pin.comment %></td>
               <td><%= pin.user.email if pin.user %></td>
               <td><%= link_to 'Show', pin_path(pin) %></td>
