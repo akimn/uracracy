@@ -3,10 +3,11 @@
 
 <!--<table class="table table-hover">-->
 <!--<div class="panel-body">-->
-
+<%= sortable "created_at", "Date" %></br>
 <div id="pins" class="transitions-enabled">
-  <%= sortable "created_at", "Date" %>
+
 <!-- <tbody>-->
+<div class="panel panel-default">
     <% @pins.each do |pin| %>
       <div class="box panel panel-default">
         <div class="panel-body">
@@ -23,12 +24,13 @@
             <dt><%= link_to 'Show', pin_path(pin) %></dt>
 
             <% if pin.user == current_user %>
-              <td><%= link_to 'Edit', edit_pin_path(pin) %></td>
-              <td><%= link_to 'Delete', pin, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              <dt><%= link_to 'Edit', edit_pin_path(pin) %></dt>
+              <dt><%= link_to 'Delete', pin, method: :delete, data: { confirm: 'Are you sure?' } %></dt>
             <% end %>
           </dl>
         </div>
       </div>
+    </div>
     <!--</tbody>-->
   <% end %>
 </div>
