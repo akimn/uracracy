@@ -1,40 +1,33 @@
 <%= hidden_field_tag :direction, params[:direction] %>
 <%= hidden_field_tag :sort, params[:sort] %>
 
-<table class="table table-hover">
+<!--<table class="table table-hover">-->
     <div class="panel-body">
 
-<thead>
-          <tr>
-            <th><%= sortable "created_at", "Date" %></th>
-            <th>Church Name</th>
-            <th>Pastor or Worship Leader Name</th>
-            <th>Comment or Prayer Request</th>
-            <th>User</th>
-            <th></th>
-            <th></th>
-            <th></th>
-          </tr>
-        </thead>
 
 
-        <tbody>
-          <% @pins.each do |pin| %>
-            <tr>
-              <td><%= pin.created_at.strftime("%b %d, %Y") %></td>
-              <td><%= pin.Church_Name %></td>
-              <td><%= pin.Pastor_or_Worship_Leader_Name %></td>
-              <td><%= pin.comment %></td>
-              <td><%= pin.user.email if pin.user %></td>
-              <td><%= link_to 'Show', pin_path(pin) %></td>
-              
-              <% if pin.user == current_user %>
-                <td><%= link_to 'Edit', edit_pin_path(pin) %></td>
-                <td><%= link_to 'Delete', pin, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-              <% end %>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
+ <tbody>
+    <% @pins.each do |pin| %>
+      <dl>
+        <dt>Church Name</dt>
+        <dd><%= pin.Church_Name %></dd>
+        <dt>Pastor or Worship Leader Name</dt>
+        <dd><%= pin.Pastor_or_Worship_Leader_Name %></dd>
+        <dt>Comment</dt>
+        <dd><%= pin.comment %></dd>
+        <dt>User</dt>
+        <dd><%= pin.user.email if pin.user %></dd>
+        <dt><%= link_to 'Show', pin_path(pin) %></dt>
+
+        <% if pin.user == current_user %>
+          <td><%= link_to 'Edit', edit_pin_path(pin) %></td>
+          <td><%= link_to 'Delete', pin, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+      </dl>
+    </tbody>
+  </div>
+
+
+
       <%= will_paginate @pins %>
 
