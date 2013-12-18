@@ -8,6 +8,7 @@
 
  <tbody>
     <% @pins.each do |pin| %>
+    <div class="box">
       <dl>
         <dt>Church Name</dt>
         <dd><%= pin.Church_Name %></dd>
@@ -24,6 +25,7 @@
           <td><%= link_to 'Delete', pin, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
       </dl>
+    </div>
     </tbody>
   </div>
 <% end %>
