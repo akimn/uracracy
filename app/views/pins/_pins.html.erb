@@ -8,23 +8,25 @@
 
 <!-- <tbody>-->
     <% @pins.each do |pin| %>
-      <div class="box">
-        <dl>
-          <dt>Church Name</dt>
-          <dd><%= pin.Church_Name %></dd>
-          <dt>Pastor or Worship Leader Name</dt>
-          <dd><%= pin.Pastor_or_Worship_Leader_Name %></dd>
-          <dt>Comment</dt>
-          <dd><%= pin.comment %></dd>
-          <dt>User</dt>
-          <dd><%= pin.user.email if pin.user %></dd>
-          <dt><%= link_to 'Show', pin_path(pin) %></dt>
+      <div class="box panel panel-default">
+        <div class="panel-body">
+          <dl>
+            <dt>Church Name</dt>
+            <dd><%= pin.Church_Name %></dd>
+            <dt>Pastor or Worship Leader Name</dt>
+            <dd><%= pin.Pastor_or_Worship_Leader_Name %></dd>
+            <dt>Comment</dt>
+            <dd><%= pin.comment %></dd>
+            <dt>User</dt>
+            <dd><%= pin.user.email if pin.user %></dd>
+            <dt><%= link_to 'Show', pin_path(pin) %></dt>
 
-          <% if pin.user == current_user %>
-            <td><%= link_to 'Edit', edit_pin_path(pin) %></td>
-            <td><%= link_to 'Delete', pin, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-          <% end %>
-        </dl>
+            <% if pin.user == current_user %>
+              <td><%= link_to 'Edit', edit_pin_path(pin) %></td>
+              <td><%= link_to 'Delete', pin, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <% end %>
+          </dl>
+        </div>
       </div>
     <!--</tbody>-->
   <% end %>
