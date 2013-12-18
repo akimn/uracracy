@@ -3,9 +3,9 @@
 
 <!--<table class="table table-hover">-->
 <!--<div class="panel-body">-->
-<%= sortable "created_at", "Date" %></br>
-<div id="pins" class="transitions-enabled">
 
+<div id="pins" class="transitions-enabled">
+  <%= sortable "created_at", "Date" %>
 <!-- <tbody>-->
     <% @pins.each do |pin| %>
       <div class="box panel panel-default">
