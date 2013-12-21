@@ -31,7 +31,7 @@ class PinsController < ApplicationController
 
     respond_to do |format|
       if @pin.save
-        format.html { redirect_to @pin, notice: 'Post was successfully created.' }
+        #format.html { redirect_to @pin, notice: 'Post was successfully created.' }
         format.json { render action: 'show', status: :created, location: @pin }
       else
         format.html { render action: 'new' }
