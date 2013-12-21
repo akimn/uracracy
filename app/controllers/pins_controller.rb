@@ -45,7 +45,7 @@ class PinsController < ApplicationController
   def update
     respond_to do |format|
       if @pin.update(pin_params)
-        format.html { redirect_to @pin, notice: 'Post was successfully updated.' }
+        #format.html { redirect_to @pin, notice: 'Post was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
