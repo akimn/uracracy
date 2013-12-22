@@ -6,25 +6,25 @@
 	<div class="col-md-offset-2 col-md-8">
 		<div class="panel panel-default">
 			<div class="panel-heading center">
-			<p>
-			  <strong>Church Name:</strong><br>
-			  <%= @pin.Church_Name %>
-			</p>
+				<p>
+				  <strong>Church Name:</strong><br>
+				  <%= @pin.Church_Name %>
+				</p>
 
-			<p>
-			  <strong>Pastor or Worship Leader Name:</strong><br>
-			  <%= @pin.Pastor_or_Worship_Leader_Name %>
-			</p>
+				<p>
+				  <strong>Pastor or Worship Leader Name:</strong><br>
+				  <%= @pin.Pastor_or_Worship_Leader_Name %>
+				</p>
 
-			<p>
-			  <strong>Comment:</strong>
-			  <%= @pin.comment %>
-			</p>
-			<p><strong><%= @pin.user.name if @pin.user %></strong></p>
-			<% if @pin.user == current_user %>
-				<p><%= link_to 'Edit', edit_pin_path(@pin) %></p> 
-			<% end %>
+				<p>
+				  <strong>Comment:</strong>
+				  <%= @pin.comment %>
+				</p>
+				<p><strong><%= @pin.user.name if @pin.user %></strong></p>
+				<% if @pin.user == current_user %>
+					<p><%= link_to 'Edit', edit_pin_path(@pin) %></p> 
+				<% end %>
+			</div>
 		</div>
 	</div>
-</div>
 </div>
