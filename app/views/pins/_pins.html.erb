@@ -21,7 +21,7 @@
             <dt>Comment</dt>
             <dd><%= pin.comment %></dd>
             <dt>User</dt>
-            <dd><%= pin.user.email if pin.user %></dd>
+            <dd><%= pin.user.name if pin.user %></dd>
             <dt><%= link_to 'Show', pin_path(pin) %></dt>
 
             <% if pin.user == current_user %>
