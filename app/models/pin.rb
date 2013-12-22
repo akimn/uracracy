@@ -36,6 +36,6 @@ class Pin < ActiveRecord::Base
 	    scoped
 
 	  end
-	
+	end
 
 end
