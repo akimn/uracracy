@@ -5,14 +5,14 @@ class Pin < ActiveRecord::Base
 	validates :Pastor_or_Worship_Leader_Name, presence: true
 	validates :comment, presence: true
 	
-	#validates :Church_Name, length: { minimum: 1 }
-  #validates :Church_Name, length: { maximum: 255 }
-  #validates :Pastor_or_Worship_Leader_Name, length: { minimum: 1 }
-  #validates :Pastor_or_Worship_Leader_Name, length: { maximum: 255 }
-  #validates :comment, length: { minimum: 1 }
-  #validates :comment, length: { maximum: 255 }
+	validates :Church_Name, length: { minimum: 1 }
+  validates :Church_Name, length: { maximum: 255 }
+  validates :Pastor_or_Worship_Leader_Name, length: { minimum: 1 }
+  validates :Pastor_or_Worship_Leader_Name, length: { maximum: 255 }
+  validates :comment, length: { minimum: 1 }
+  validates :comment, length: { maximum: 255 }
 
-  #validates :password, length: { in: 6..40 }
+  validates :password, length: { in: 6..40 }
 
 	def self.search(search)
 		
