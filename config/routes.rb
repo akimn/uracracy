@@ -1,7 +1,7 @@
 Unacracy::Application.routes.draw do
   resources :pins
-  resources :names
-  
+  #resources :names
+
   devise_for :users
   
   root "pins#index"
