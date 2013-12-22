@@ -15,13 +15,13 @@
           <dl>
             <dt><%= pin.created_at.strftime("%b %d, %Y") %></dt>
             <dt>Church Name</dt>
-            
+            <dd><%= pin.Church_Name %></dd>
             <dt>Pastor or Worship Leader Name</dt>
             <dd><%= pin.Pastor_or_Worship_Leader_Name %></dd>
             <dt>Comment</dt>
             <dd><%= pin.comment %></dd>
             <dt>User</dt>
-            <dd><%= pin.user.name if pin.user %></dd>
+            <dd><%= pin.user.email if pin.user %></dd>
             <dt><%= link_to 'Show', pin_path(pin) %></dt>
 
             <% if pin.user == current_user %>
