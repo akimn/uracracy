@@ -1,9 +1,9 @@
 class Pin < ActiveRecord::Base
 	belongs_to :user
 	
-	#validates :church_name, presence: true
-	#validates :pastor_or_worship_leader_name, presence: true
-	#validates :comment, presence: true
+	validates :church_name, presence: true
+	validates :pastor_or_worship_leader_name, presence: true
+	validates :comment, presence: true
 	
 	#validates :church_name, length: { minimum: 2 }
   	validates :church_name, length: { maximum: 255 }
@@ -17,7 +17,7 @@ class Pin < ActiveRecord::Base
 	def self.search(search)
 		
 	  if search	
-      where('comment ILIKE ? OR "church_name" ILIKE ? OR "pastor_or_worship_leader_name" ILIKE ?', "%#{search}%", "%#{search}%", "%#{search}%")
+      where('name ILIKE ? OR comment ILIKE ? OR "church_name" ILIKE ? OR "pastor_or_worship_leader_name" ILIKE ?', "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
 	  else
 	    scoped
 	  end
