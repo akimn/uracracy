@@ -5,11 +5,11 @@ class Pin < ActiveRecord::Base
 	#validates :pastor_or_worship_leader_name, presence: true
 	#validates :comment, presence: true
 	
-	validates :church_name, length: { minimum: 2 }
+	#validates :church_name, length: { minimum: 2 }
   	validates :church_name, length: { maximum: 255 }
-  	validates :pastor_or_worship_leader_name, length: { minimum: 1 }
+  	#validates :pastor_or_worship_leader_name, length: { minimum: 1 }
   	validates :pastor_or_worship_leader_name, length: { maximum: 255 }
-  	validates :comment, length: { minimum: 1 }
+  	#validates :comment, length: { minimum: 1 }
   	validates :comment, length: { maximum: 255 }
 
   	#validates :password, length: { in: 6..40 }
