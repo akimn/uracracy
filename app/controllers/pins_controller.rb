@@ -76,7 +76,7 @@ class PinsController < ApplicationController
     end
     # Never trust parameters from the scary internet, only allow the white list through.
     def pin_params
-      params.require(:pin).permit(:Church_Name, :Pastor_or_Worship_Leader_Name, :comment)
+      params.require(:pin).permit(:church_name, :pastor_or_worship_leader_name, :comment)
     end
 
     def sort_column
