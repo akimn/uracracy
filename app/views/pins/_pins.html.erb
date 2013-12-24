@@ -15,16 +15,11 @@
     <% @pins.each do |pin| %>
       <div class="box panel panel-default">
           <dl>
-            <!--<dt>Church Name</dt>-->
-            <!--<dd><%= pin.church_name %></dd>-->
             <dt><h3><%= link_to pin.church_name, pin_path(pin) %></h3></dt>
-            <!--<dt>Pastor or Worship Leader Name</dt>-->
-            <!--<dd><%= pin.pastor_or_worship_leader_name %></dd>-->
             <dt><%= pin.pastor_or_worship_leader_name %></dt>
-            <!--<dt>Comment</dt>-->
+            <br>
             <dd><%= pin.comment %></dd>
             <br>
-            <!--<dt>User</dt>-->
             <dd>by <%= pin.user.name if pin.user %></dd>
             <dt><h6><%= pin.created_at.strftime("%b %d, %Y") %></h6></dt>
 
