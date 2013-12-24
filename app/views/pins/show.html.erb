@@ -7,22 +7,35 @@
 		<div class="panel panel-default">
 			<div class="panel-heading center">
 				<p>
-				  <strong>Church Name:</strong><br>
-				  <%= @pin.church_name %>
+				  <!--<strong>Church Name:</strong><br>-->
+				  <h2><%= @pin.church_name %></h2>
 				</p>
 
 				<p>
-				  <strong>Pastor or Worship Leader Name:</strong><br>
-				  <%= @pin.pastor_or_worship_leader_name %>
+				  <!--<strong>Pastor or Worship Leader Name:</strong><br>-->
+				  <h4><%= @pin.pastor_or_worship_leader_name %></h4>
 				</p>
 
 				<p>
-				  <strong>Comment:</strong>
+				  <!--<strong>Comment:</strong>-->
 				  <%= @pin.comment %>
 				</p>
-				<p><strong><%= @pin.user.name if @pin.user %></strong></p>
-				<% if @pin.user == current_user %>
-					<p><%= link_to 'Edit', edit_pin_path(@pin) %></p> 
+				
+				<p><h5>
+					<%= @pin.user.name if @pin.user %></h5>
+				</p>
+
+				<p>
+					<h6><%= @pin.created_at.strftime("%b %d, %Y") %></h6>
+				</p>
+
+					<% if @pin.user == current_user %>	
+				
+			</div>
+				<p>
+					<%= link_to 'Edit', edit_pin_path(@pin) %>
+				</p> 
+
 				<% end %>
 			</div>
 		</div>
