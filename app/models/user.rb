@@ -10,13 +10,5 @@ class User < ActiveRecord::Base
 
 	validates :name, presence: true
 
-	def self.search(search)
-		
-	  if search	
-      	where('user.name ILIKE ?', "%#{search}%")
-	  else
-	    scoped
-	  end
 
-	end
 end
