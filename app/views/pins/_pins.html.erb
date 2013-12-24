@@ -28,7 +28,7 @@
 
             <% if pin.user == current_user %>
               <%= link_to 'Edit', edit_pin_path(pin), class: "btn btn-primary btn-xs" %>
-              <%= link_to 'Delete', pin, class: "btn btn-primary btn-xs"method: :delete, data: { confirm: 'Are you sure?' } %></dt>
+              <%= link_to 'Delete', pin, class: "btn btn-primary btn-xs", method: :delete, data: { confirm: 'Are you sure?' } %></dt>
 
             <% end %>
           </dl>
