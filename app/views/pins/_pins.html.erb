@@ -22,13 +22,14 @@
             <dd><%= pin.pastor_or_worship_leader_name %></dd>
             <dt>Comment</dt>
             <dd><%= pin.comment %></dd>
-            <dt>User</dt>
-            <dd><%= pin.user.name if pin.user %></dd>
-            <dt><%= link_to 'Show', pin_path(pin) %></dt>
+            <!--<dt>User</dt>-->
+            <dt><%= pin.user.name if pin.user %></dt>
+            <dt><%= link_to 'Show', pin_path(pin), class: "btn btn-primary btn-xs" %>
 
             <% if pin.user == current_user %>
-              <dt><%= link_to 'Edit', edit_pin_path(pin) %></dt>
-              <dt><%= link_to 'Delete', pin, method: :delete, data: { confirm: 'Are you sure?' } %></dt>
+              <%= link_to 'Edit', edit_pin_path(pin), class: "btn btn-primary btn-xs" %>
+              <%= link_to 'Delete', pin, class: "btn btn-primary btn-xs"method: :delete, data: { confirm: 'Are you sure?' } %></dt>
+
             <% end %>
           </dl>
         </div>
