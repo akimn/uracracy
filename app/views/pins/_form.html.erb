@@ -15,17 +15,20 @@
     <% end %>
 
       <div class="form-group">
-        <%= f.label :church_name %>
+        <%= f.label "name of place (ie church)" %>
+        <!--<%= f.label :church_name %>-->
         <%= f.text_field :church_name, class: "form-control" %>
       </div>
 
       <div class="form-group">
-        <%= f.label :pastor_or_worship_leader_name %>
+        <%= f.label "name of person (ie pastor or worship leader)" %>
+         <!--<%= f.label :pastor_or_worship_leader_name %>-->
         <%= f.text_field :pastor_or_worship_leader_name, class: "form-control"  %>
       </div>
 
       <div class="form-group">
-        <%= f.label :comment %>
+        <%= f.label "comment or request (ie prayer request)" %>
+         <!--<%= f.label :comment %>-->
         <%= f.text_field :comment, class: "form-control", rows: "2"  %>
       </div>
 
