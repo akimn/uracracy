@@ -16,17 +16,17 @@
       <div class="box panel panel-default">
         <div class="actions center">
           <dl>
-            <!--<dt><h3><%= link_to pin.church_name, pin_path(pin) %></h3></dt>-->
+            <dt><h3><%= link_to pin.church_name, pin_path(pin) %></h3></dt>
             <dt><h3><%= pin.church_name %></h3></dt>
             <dt><%= pin.pastor_or_worship_leader_name %></dt>
             <br>
             <dd><%= pin.comment %></dd>
             <br>
             <dd>by <%= pin.user.name if pin.user %></dd>
-            <dt><h6><%= pin.created_at.strftime("%b %d, %Y") %></h6></dt>
+            <dt><h6><%= pin.created_at.strftime("%b %d, %Y") %></h6></dt></br>
 
             
-              <dt><%= link_to 'Show', pin_path(pin), class: "btn btn-primary btn-xs" %>
+              <!--<dt><%= link_to 'Show', pin_path(pin), class: "btn btn-primary btn-xs" %>-->
 
               <% if pin.user == current_user %>
                 <%= link_to 'Edit', edit_pin_path(pin), class: "btn btn-primary btn-xs" %>
