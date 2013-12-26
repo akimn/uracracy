@@ -14,6 +14,8 @@ class Pin < ActiveRecord::Base
 
   	#validates :password, length: { in: 6..40 }
 
+  	
+
 	def self.search(search)
 		
 	  if search	
@@ -23,5 +25,5 @@ class Pin < ActiveRecord::Base
 	  end
 
 	end
-
+	has_attached_file :image, :styles => { :medium => "700x700>", :thumb => "100x100>" }
 end
