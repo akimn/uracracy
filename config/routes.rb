@@ -6,6 +6,7 @@ Unacracy::Application.routes.draw do
   
   root "pins#index"
   get "about" => "pages#about" # creates about path
+  get "profile" => "pins#indexprofile" # creates profile path
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
