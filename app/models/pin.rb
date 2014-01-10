@@ -19,7 +19,7 @@ class Pin < ActiveRecord::Base
 	def self.search(search)
 		
 	  if search	
-      	where('comment ILIKE ? OR "username" ILIKE ? OR "church_name" ILIKE ? OR "pastor_or_worship_leader_name" ILIKE ?', "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
+      	where('comment ILIKE ? OR user.name ILIKE ? OR "church_name" ILIKE ? OR "pastor_or_worship_leader_name" ILIKE ?', "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
 	  else
 	    scoped
 	  end
