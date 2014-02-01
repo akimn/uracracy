@@ -10,7 +10,7 @@
 
 <div id="pins" class="transitions-enabled">
 
-<!-- <tbody>-->
+
   <div class="panel panel-default">
     <% @pins.each do |pin| %>
       <div class="box panel panel-default">
@@ -18,7 +18,6 @@
           <dl>
             <%= image_tag pin.image.url(:medium) %>
             <dt><h3><%= link_to pin.church_name, pin_path(pin) %></h3></dt>
-            <!--<dt><h3><%= pin.church_name %></h3></dt>-->
             <dt><%= pin.pastor_or_worship_leader_name %></dt>
             <br>
             <dd><%= pin.comment %></dd>
@@ -26,21 +25,17 @@
             <dd>by <%= pin.user.name if pin.user %></dd>
             <dt><h6><%= pin.created_at.strftime("%b %d, %Y") %></h6></dt></br>
 
-            
-              <!--<dt><%= link_to 'Show', pin_path(pin), class: "btn btn-primary btn-xs" %>-->
-
               <% if pin.user == current_user %>
                 <%= link_to 'Edit', edit_pin_path(pin), class: "btn btn-primary btn-xs" %>
                 <%= link_to 'Delete', pin, class: "btn btn-primary btn-xs", method: :delete, data: { confirm: 'Are you sure?' } %></dt>
 
             <% end %>
-          </div>
-          </dl>
         </div>
-      <% end %>
-    </div>
-   
+          </dl>
+      </div>
+    <% end %>
   </div>
+</div>
 
 
 
