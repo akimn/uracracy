@@ -7,8 +7,8 @@ class Pin < ActiveRecord::Base
 	
 	validates :church_name, length: { minimum: 2 }
   	validates :church_name, length: { maximum: 255 }
-  	validates :pastor_or_worship_leader_name, length: { minimum: 1 }
-  	validates :pastor_or_worship_leader_name, length: { maximum: 255 }
+  	validates :Brand, length: { minimum: 1 }
+  	validates :Brand, length: { maximum: 255 }
   	validates :comment, length: { minimum: 1 }
   	validates :comment, length: { maximum: 255 }
 
@@ -19,7 +19,7 @@ class Pin < ActiveRecord::Base
 	def self.search(search)
 		
 	  if search	
-      	where('comment ILIKE ? OR "church_name" ILIKE ? OR "pastor_or_worship_leader_name" ILIKE ?', "%#{search}%", "%#{search}%", "%#{search}%")
+      	where('comment ILIKE ? OR "church_name" ILIKE ? OR "Brand" ILIKE ?', "%#{search}%", "%#{search}%", "%#{search}%")
 	  else
 	    scoped
 	  end
