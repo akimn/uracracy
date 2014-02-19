@@ -2,7 +2,7 @@ class Pin < ActiveRecord::Base
 	belongs_to :user
 	
 #	validates :title_of_piece, presence: true:
-		#validates :church_name, presence: true
+		validates :church_name, presence: true
 	
 	validates :pastor_or_worship_leader_name, presence: true
 	validates :comment, presence: true
